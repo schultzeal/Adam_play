@@ -16,7 +16,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Section Title",
-  "body": " Section Title  Here we talk about how we really  love pretext. Sine is written .  "
+  "body": " Section Title  Here we talk about how we  really  love pretext. Sine is written .     first one      second one    First exercise here  Second exercise here   "
+},
+{
+  "id": "exercises-play-1",
+  "level": "2",
+  "url": "sec-section-ratesofchange.html#exercises-play-1",
+  "type": "Exercise",
+  "number": "1.1.1",
+  "title": "",
+  "body": "  first one   "
+},
+{
+  "id": "exercises-play-2",
+  "level": "2",
+  "url": "sec-section-ratesofchange.html#exercises-play-2",
+  "type": "Exercise",
+  "number": "1.1.2",
+  "title": "",
+  "body": "  second one   "
 },
 {
   "id": "backmatter-2",
