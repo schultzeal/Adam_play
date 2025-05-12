@@ -6,7 +6,7 @@
 
   <book xml:id="my-great-book">
     <title>Calculus with Squirrels</title>
-    <subtitle>an adventure with Nuts</subtitle>
+    <subtitle>a mathematical adventure with Nuts</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
