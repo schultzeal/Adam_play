@@ -9,26 +9,248 @@
 
   </p> 
 
+  
+
   <p> Amanda was here! </p>
   <exercises xml:id="exercises-play">
     <exercise>
       <statement>
-       <p> first one </p>
+       <p> use /lt for less than and /gt for greater than </p>
       </statement>
     </exercise>
     <exercise>
       <statement>
-       <p> second one </p>
+       <p> and /amp for ampersand in latex mode </p>
       </statement>
     </exercise>
-    <p>
-      First exercise here
-    </p>
+    <exercise>
+      <statement>
+        <p>
+          <m>
+            f(x) = \begin{cases}
+              1 \amp x=0 \\
+              0 \amp x\neq 0
 
-    <p>
-      Second exercise here
-    </p>
+            \end{cases}
+          </m>
+        </p>
+      </statement>
+    </exercise>
     
   </exercises>
+
+  <p>
+    now lets do more stuff and number things in a different way
+  </p>
+
+  <ol>
+
+     <li>
+      <p>
+        we put the first here
+      </p>
+     </li>
+
+     <li>
+      <p>
+        and another one here
+      </p>
+     </li>
+
+  </ol>
+
+  <ul>
+    <li>
+      <p>
+        <me>
+  \begin{array}{c|c|c} 
+    1 \amp 2 \amp 3 \\ \hline
+    4 \amp 5 \amp 6
+  \end{array}
+         </me>
+      </p>
+    </li>
+  </ul>
+
+  <activity>
+    <p> what does this look like? </p>
+    <task>
+      <statement>
+        <p>
+          do some math
+        </p>
+      </statement>
+    </task>
+    <task xml:id="MYworkspace">
+      <statement>
+        <p>
+          this is in my workspace
+        </p>
+      </statement>
+
+         <hint>
+      <p>
+        we are doing it!!!
+      </p>
+    </hint>
+    </task>
+  
+
+ 
+  
+  </activity>
+  <p>
+    now we reference <xref ref="MYworkspace"/>.
+  </p>
+
+  <lemma xml:id="lem-nuts">
+    <statement>
+      <p>
+        This is an amazing lemma about squirrels
+      </p>
+    </statement>
+  </lemma>
+
+<proof>
+  <p>
+    here we prove things using Lemma <xref ref="lem-nuts"/> to proof itself (thats bad but ok for here)
+  </p>
+</proof>
+
+<blocks>
+  <block>
+    <p>
+      this is in a block
+    </p>
+  </block>
+  <block>
+    <p>
+      this is in another block
+    </p>
+  </block>
+</blocks>
+
+<assemblage xml:id="assemblage-first">
+  <title>BIG Stuffs here!</title>
+  <p>
+    little stuffs here
+  </p>
+</assemblage>
+
+<assemblage xml:id="assemblage-double-ing">
+  <title>double-ing</title>
+
+    <sidebyside  widths="33% 33%" margins="11%" valign="middle">
+  <image width="25%" xml:id="tikz_quick_eg">
+    <latex-image>
+      \begin{tikzpicture}
+        \draw[fill=green,opacity=0.2] (0,0) circle (1.15);
+        \draw[fill=blue,opacity=0.2] (1,0) circle (1.15);
+        \end{tikzpicture}
+    </latex-image>
+  </image>
+
+  <image width="33%" xml:id="image_tikz_eg">
+    <latex-image>
+      \begin{tikzpicture} 
+        \\ Shade the enclosed area first
+        \draw[color=white,fill=violet,opacity=0.33] 
+          (1,0) 
+          -- (1,{cos(1 r)+2}) 
+          -- plot[domain= 1:3] ({\x},{sin(\x r)+2}) 
+          -- (3,{sin(3 r)+2})
+          -- (3,0)
+          -- (1,0);
+
+        \\ Draw the axes
+        \draw[latex-latex] (-1,0) -- (5,0);
+        \draw[latex-latex] (0,-1) -- (0,4);
+
+        \\ Plot the function
+        \draw [thick,domain=-1:4.5] plot ({\x},{sin(\x r)+2});
+        \node [thick,above right] at (4.5,{sin(4.5 r) + 2}){$f$};
+
+        \\ Draw the boundaries
+        \draw[red] (1,3) -- (1,-0.25) node [below] {$a$};
+        \draw[red] (3,3) -- (3,-0.25) node [below] {$b$};
+
+        \\ Label the area
+        \draw[&lt;- , very thick] (2,0.5) -- (2.2,-1) node[below] {area between $f$ and $x$-axis over $[a,b]$};
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+</sidebyside>
+
+</assemblage>
+
+<assemblage xml:id="assemblage-moreplay">
+      <sidebyside  widths="33% 33%" margins="11%" valign="middle">
+  <title>I am a Table</title>
+  <p>
+    <m>f(x)=x^2</m>
+  </p>
+        <p>
+      
+<table xml:id="tab-first">
+<title>first table</title>
+
+
+  <tabular>
+    <row bottom="medium">
+      <cell> x </cell>
+      <cell> f(x) </cell>
+    </row>
+
+    <row>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>9</cell>
+    </row>
+  </tabular>
+
+</table>
+ 
+         
+         Talk about Table <xref ref="tab-first"/>
+      </p>
+      </sidebyside>
+</assemblage>
+
+<p>
+  <m> \begin{array}{c | c} 
+    x  \amp f(x) \\ \hline
+    1\amp 1  \\
+    2\amp 4  \\
+    3\amp 9
+  \end{array}</m>
+</p>
+<p>
+  <tabular>
+  <row>
+    <cell>x</cell>
+    <cell>f(x)</cell>
+  </row>
+  <line/>
+  <row>
+    <cell>1</cell>
+    <cell>1</cell>
+  </row>
+  <row>
+    <cell>2</cell>
+    <cell>4</cell>
+  </row>
+  <row>
+    <cell>3</cell>
+    <cell>9</cell>
+  </row>
+</tabular>
+</p>
 
 </section>
