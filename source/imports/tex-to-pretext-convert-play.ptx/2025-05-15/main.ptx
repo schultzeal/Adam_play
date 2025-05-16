@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+
+<article xml:id="a0000000001" >
+    <title></title>
+    <p>
+  1.5 
+</p>
+<p>
+  <!-- \xlarge{ -->Math 352: Algebra I Homework 1 (Intro to Proofs and Sets)<!-- } -->
+</p>
+<p>
+  Your Name Here 
+</p>
+<ol>
+  <li><p>
+  Chapter 1: Exercise 2 
+</p>
+<theorem>
+  <statement>
+    <p>
+  Let <m>m</m> and <m>n</m> be integers. If <m>m</m> and <m>n</m> are both odd, then <m>mn</m> is odd. 
+</p>
+
+  </statement>
+</theorem>
+<proof>
+  
+</proof>
+</li>
+  <li><p>
+  Chapter 1: Exercise 20 
+</p>
+<theorem>
+  <statement>
+    <p>
+  If <m>n</m> is an odd integer, then <m>n^2=8k+1</m> for some integer <m>k</m>. 
+</p>
+
+  </statement>
+</theorem>
+<proof>
+  
+</proof>
+</li>
+  <li><p>
+  Chapter 2: Exercise 9 
+</p>
+<theorem>
+  <statement>
+    <p>
+  The set <m>\mathbb {Q} = \{  \frac{m}{n} \hspace{4pt} | \hspace{4pt} m,n\in \mathbb {Z}, n\neq 0\} </m> is closed under addition. 
+</p>
+
+  </statement>
+</theorem>
+<proof>
+  
+</proof>
+</li>
+  <li><p>
+  Chapter 2: Exercise 17 
+</p>
+<theorem>
+  <statement>
+    <p>
+  If <m>C = \{  n\in \mathbb {Z} \hspace{4pt} | \hspace{4pt} n\in 2\mathbb {Z}\hspace{4pt}\text{and}\hspace{4pt}n\in 3\mathbb {Z}\} </m> then <m>C\subseteq 6\mathbb {Z}</m>. 
+</p>
+
+  </statement>
+</theorem>
+<proof>
+  
+</proof>
+</li>
+  <li><p>
+  Chapter 2: Exercise 21 
+</p>
+<p>
+  <!-- \textbf --><term>Definition.</term> Let <m>S</m> and <m>T</m> be sets. Then their <!-- \textit --><em>intersection</em> is the set of all elements that are both in <m>S</m> and <m>T</m>. We write 
+</p>
+<me>
+   S\cap T := \{ x|x\in S, x\in T\} . 
+</me>
+<theorem>
+  <statement>
+    <p>
+  Let <m>S</m> and <m>T</m> be sets. If <m>S\subseteq T</m>, then <m>S\cap T = S</m>. 
+</p>
+
+  </statement>
+</theorem>
+<proof>
+  
+</proof>
+</li>
+</ol>
+
+
+ </article>
+</pretext>

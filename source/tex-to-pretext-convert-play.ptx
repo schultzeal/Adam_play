@@ -1,0 +1,135 @@
+\documentclass[12pt]{article} 
+
+\usepackage{geometry} 
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{setspace}
+\usepackage{tikz}
+\linespread{4}
+
+\usetikzlibrary[positioning,patterns]
+
+\oddsidemargin=0in
+\textwidth=6.25in
+%\topmargin=-0.5in
+=9in
+
+
+
+\newtheorem*{theorem}{Theorem}
+\renewenvironment{proof}{\noindent {\sc Proof.}}{\qed}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\allowdisplaybreaks
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{spacing}{1.5}
+
+\noindent
+{\Large
+Math 352: Algebra I
+\hfill Homework 1 (Intro to Proofs and Sets)}\bigskip\bigskip
+
+
+%%%%
+%%%% Be sure to enter your name!
+%%%%
+Your Name Here
+
+\begin{enumerate}
+
+\item Chapter 1: Exercise 2
+\begin{theorem}
+Let $m$ and $n$ be integers. If $m$ and $n$ are both odd, then $mn$ is odd.
+\end{theorem}
+
+
+%%%
+%%% Enter your proof below, between \begin{proof} and \end{proof}.
+%%%
+\begin{proof}
+
+
+\end{proof}
+%%%
+%%%
+%%%
+
+
+\item Chapter 1: Exercise 20
+\begin{theorem}
+If $n$ is an odd integer, then $n^2=8k+1$ for some integer $k$.
+\end{theorem}
+
+
+%%%
+%%% Enter your proof below, between \begin{proof} and \end{proof}.
+%%%
+\begin{proof}
+
+
+\end{proof}
+%%%
+%%%
+%%%
+
+\item Chapter 2: Exercise 9
+\begin{theorem}
+The set $\mathbb{Q} = \{ \frac{m}{n} \hspace{4pt} | \hspace{4pt} m,n\in\mathbb{Z}, n\neq 0\}$ is closed under addition.
+\end{theorem}
+
+
+%%%
+%%% Enter your proof below, between \begin{proof} and \end{proof}.
+%%%
+\begin{proof}
+
+
+\end{proof}
+%%%
+%%%
+%%%
+
+\item Chapter 2: Exercise 17
+\begin{theorem}
+If $C = \{ n\in\mathbb{Z} \hspace{4pt} | \hspace{4pt} n\in 2\mathbb{Z}\hspace{4pt}\text{and}\hspace{4pt}n\in 3\mathbb{Z}\}$ then $C\subseteq 6\mathbb{Z}$.
+\end{theorem}
+
+
+%%%
+%%% Enter your proof below, between \begin{proof} and \end{proof}.
+%%%
+\begin{proof}
+
+
+\end{proof}
+%%%
+%%%
+%%%
+
+\item Chapter 2: Exercise 21
+
+\textbf{Definition.} Let $S$ and $T$ be sets. Then their \textit{intersection} is the set of all elements that are both in $S$ and $T$.  We write $$S\cap T := \{x|x\in S, x\in T\}.$$
+\begin{theorem}
+Let $S$ and $T$ be sets. If $S\subseteq T$, then $S\cap T = S$.
+\end{theorem}
+
+
+%%%
+%%% Enter your proof below, between \begin{proof} and \end{proof}.
+%%%
+\begin{proof}
+
+
+\end{proof}
+%%%
+%%%
+%%%
+
+\end{enumerate}
+\end{spacing}
+\end{document}

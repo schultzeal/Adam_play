@@ -99,9 +99,7 @@
  
   
   </activity>
-  <p>
-    now we reference <xref ref="MYworkspace"/>.
-  </p>
+
 
   <lemma xml:id="lem-nuts">
     <statement>
@@ -287,6 +285,406 @@ def midpoint(n = slider(1,100,1,4), f = input_box(default = "x^2", type = str, w
 </slate>
           </interactive>
         </figure>
+
+
+
+        <subsection xml:id="section-sage-cells" label="section-sage-cells">
+      <title>Computing Integrals with Sage (<m>\int</m>)</title>
+
+
+      <plaintitle>Computing Integrals with Sage (∫)</plaintitle>
+
+      <idx><h>Sage</h><h>integration</h></idx>
+      <idx><h>Sage</h><h>integration</h><h>cell</h></idx>
+      <idx><h>Sage</h><h>integration</h><h>numerical</h></idx>
+      <idx><h>numerical</h><see>Sage integration</see></idx>
+      <idx><h>numerical</h><see>Sage</see></idx>
+
+      <idx>numerics</idx>
+      <idx><h>numerics</h><seealso>Sage</seealso></idx>
+      <idx><h>numerical integration</h><h>Sage</h><h>cell</h><see>Sage</see></idx>
+
+      <idx><h>A</h><see>F</see></idx>
+      <idx><h>A</h><see>G</see></idx>
+      <idx><h>A</h><see>H</see></idx>
+      <idx><h>A</h><h>B</h></idx>
+      <idx><h>A</h><h>B</h><h>C</h></idx>
+      <idx><h>A</h><h>B</h><h>C</h><seealso>D</seealso></idx>
+      <idx><h>A</h><h>B</h><h>C</h><seealso>A</seealso></idx>
+
+
+      <idx><h>X</h></idx>
+      <idx><h>X</h><seealso>F</seealso></idx>
+      <idx><h>X</h><seealso>G</seealso></idx>
+      <idx><h>X</h><seealso>H</seealso></idx>
+      <idx><h>X</h><h>Y</h></idx>
+      <idx><h>X</h><h>Y</h><h>Z</h><see>D</see></idx>
+      <idx><h>X</h><h>Y</h><h>Z</h><see>A</see></idx>
+
+
+      <idx>mixed-content <em>emphasized</em></idx>
+      <idx><h>structured-content <em>emphasized</em></h></idx>
+      <idx><h sortby="cat">sorted as if
+      <q>Cat</q>
+      </h></idx>
+      <idx sortby="quorum">sorted as if
+      <q>Quorum</q>
+      </idx>
+      <idx><h>units</h><h sortby="A">Z (
+      <alert>sort as</alert>
+      A)</h></idx>
+      <idx><h>units</h><h sortby="Z">A (
+      <alert>sort as</alert>
+      Z)</h></idx>
+      <idx sortby="verbatim"><c>verbatim text</c>, use sortby</idx>
+
+      <idx sortby="R"><m>\rho</m><ndash />fibers</idx>
+
+
+
+
+      <idx>Cayley graph</idx>
+      <idx>cayley graph</idx>
+      <idx>CAYLEY GRAPH</idx>
+
+
+
+      <idx><h sortby="x"><m>x</m> as a variable</h></idx>
+      <p>
+        Sage can compute definite integrals.
+        The output contains the approximate numerical value of the definite integral,
+        followed by an upper bound of the error in the approximation.
+      </p>
+<sage>
+<input>numerical_integral(sin(x)^2, (0, 2))</input>
+
+<output>(1.189200623826982, 1.320277913471315e-14)</output>
+</sage>
+      <p>
+        Given the Fundamental Theorem,
+        we would find the antiderivative useful.
+            <idx>Cayley graph</idx>
+            <idx><h sortby="x"><m>x</m> as a variable</h></idx>
+      </p>
+<sage>
+<input>integral(sin(x)^2, x)</input>
+<output>1/2*x - 1/4*sin(2*x)</output>
+</sage>
+      <p>
+        The same command can be used to employ the antiderivative in the application of the Fundamental Theorem.
+        Notice that the answer is <em>exact</em>
+        and any further manipulation is likely to be simply producing a numerical approximation.
+            <idx>cayley graph</idx>
+      </p>
+
+<sage type="full">
+<input>integral(sin(x)^2, (x, 0, 2))</input>
+<output>-1/4*sin(4) + 1</output>
+</sage>
+      <p>
+        There are integrals you really do not want to evaluate,
+        or you do not want your reader to evaluate.
+        A Sage cell can be configured for display purposes only<mdash />you can look but you cannot touch.
+            <idx>CAYLEY GRAPH</idx>
+      </p>
+<sage type="display">
+<input>integral(e^(x^2), x)</input>
+<output>-1/2*I*sqrt(pi)*erf(I*x)</output>
+</sage>
+      <p>
+        You can give a Sage element a <c>doctest</c>
+            <idx>doctest</idx>
+            <idx><h>attributes</h><h>doctest</h></idx>
+        attribute, whose value mirrors the optional hash tags used in Sage doctests.
+        Possible values are <c>random</c>,
+        <c>long time</c>,
+        <c>not implemented</c>,
+        <c>not tested</c>,
+        <c>known bug</c>,
+        <c>absolute</c>,
+        <c>relative</c>,
+        and <c>optional</c>.
+        The values <c>absolute</c> and <c>relative</c> refer to floating-point tolerances for equality and require a second attribute <c>tolerance</c> to specify a floating point value.
+        The value <c>optional</c> refers to the test requiring that an optional Sage package be present.
+        The name of that package should be provided in the <c>package</c> attribute.
+      </p>
+
+      <p>
+        The next cell is marked in the source as <c>doctest="random"</c>,
+        and so is specified as unpredictable and not tested.
+        But there is some
+        <q>sample</q>
+        output which will appear in the <latex /> version
+        (and always be the same).
+            <idx>c</idx>
+            <idx><h sortby="c">A bug test, sorted as
+        <q>c</q>
+        </h><h>b</h><h>c one</h></idx> <idx><h sortby="c">A bug test,
+        sorted as
+        <q>c</q>
+        </h><h>x</h><h>c two</h></idx> <idx><h sortby="c">A bug test,
+        sorted as
+        <q>c</q>
+        </h><h>b</h><h>c three</h></idx>
+      </p>
+<sage doctest="random">
+<input>random()</input>
+<output>0.11736021338650582</output>
+</sage>
+      <p>
+        While the next cell is random,
+        the returned value will never be more than <m>0.01</m> away from <m>12</m>,
+        since the <c>random()</c> function stays between <m>0</m> and <m>1</m>.
+        So we provide <m>12.005</m> as the expected answer,
+        but test with an absolute tolerance of <m>\epsilon=0.006</m>.
+      </p>
+<sage doctest="absolute" tolerance="0.006">
+<input>12 + 0.01*random()</input>
+<output>12.005</output>
+</sage>
+      <p>
+        Sage has some functions which affect output,
+        generally making mathematics look more like mathematics via <latex /> syntax.
+        This is a simple test,
+        and you should see the variable and superscript in italics,
+        properly formatted as output when viewed within HTML output.
+        We have provided expected output for doctesting,
+        but it is sort of silly to have this as part of <latex /> output,
+        even if it is instructive.
+      </p>
+<sage>
+<input>pretty_print(html("$a^2$"))</input>
+<output>&lt;script type="math/tex"&gt;a^2&lt;/script&gt;</output>
+</sage>
+
+      <p>
+        Sage, and by extension, the Sage Cell Server,
+        can interpret several languages.
+        The next example has code in the <c>R</c> language,
+            <idx><h>R</h></idx>
+        a popular open source language for statistics.
+        As an author,
+        you add the attribute <c>language="r"</c> to your <c>sage</c> element.
+        (The default language is Sage,
+        so you do not need to indicate that repeatedly.)
+        Note that a language like <c>R</c> likes to use a
+        <q>less than</q>
+        character, &lt;, special character in XML. You need to escape it by writing <c>&amp;lt;</c> as we have done in the source for this example.
+       
+      </p>
+      <p>
+        As a reader you learn that the
+        <q>Evaluate</q>
+        button for a pre-loaded Sage cell will indicate the language in use.
+      </p>
+<sage doctest="not tested" language="r">
+<input>
+ruth &lt;- c(22, 25, 34, 35, 41, 41, 46, 46, 46, 47, 49, 54, 54, 59, 60)
+bonds &lt;- c(16, 25, 24, 19, 33, 25, 34, 46, 37, 33, 42, 40, 37, 34, 49, 73, 46, 45, 45, 5, 26, 28)
+dimaggio &lt;- c(12, 14, 20, 21, 25, 29, 30, 30, 31, 32, 32, 39, 46)
+summary(ruth)
+summary(bonds)
+summary(dimaggio)
+boxplot(ruth, bonds, dimaggio)
+</input>
+</sage>
+      <p>
+        The Sage Cell Server supports the following languages:
+        <c>sage</c>,
+        <c>gap</c>,
+        <c>gp</c>, <c>html</c>,
+        <c>maxima</c>,
+        <c>octave</c>,
+        <c>python</c>,
+        <c>r</c>,
+        and <c>singular</c>.
+      </p>
+      <p>
+        Here is another <c>R</c> cell.
+        Unfortunately,
+        it seems Sage's <c>doctest</c> facility cannot be used easily with code from other languages.
+        In the source for this example,
+        we have employed the <init>XML</init> escape sequence,
+        <c>&amp;lt;</c> several times
+      
+      </p>
+<sage language="r">
+<input>
+age &lt;- c(25, 30, 56)
+gender &lt;- c("male", "female", "male")
+weight &lt;- c(160, 110, 220)
+mydata &lt;- data.frame(age,gender,weight)
+summary(mydata)
+cor(mydata$age,mydata$weight)
+mean(mydata$age)
+sd(mydata$age)
+plot(mydata$age,mydata$weight)
+</input>
+</sage>
+
+      <p>
+        The Sage Cell server imports a few important R packages.
+        As of 2022-06-04 these are <c>deSolve</c>,
+        <c>ggplot2</c>,
+        <c>pracma</c>,
+        <c>survey</c>,
+        <c>swirl</c>,
+        and <c>tidyverse</c>.
+        This next example uses the <c>ggplot</c> library for both a data set and the plotting capabilities.
+        Note the initial use of the <c>library()</c> function.
+        This is a modified version of the <articletitle>Bubble plot</articletitle> example at
+        <url href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">Top 50 <c>ggplot2</c> Visualizations <mdash />The Master List</url>.
+      </p>
+<sage language="r">
+<input>
+# load package and data
+library(ggplot2)
+data(mpg, package="ggplot2")
+mpg_select &lt;- mpg[mpg$manufacturer %in% c("audi", "ford", "honda", "hyundai"), ]
+# Scatterplot
+g &lt;- ggplot(mpg_select, aes(displ, cty)) +
+labs(subtitle="mpg: Displacement vs City Mileage",
+title="Bubble chart")
+g + geom_jitter(aes(col=manufacturer, size=hwy)) +
+geom_smooth(aes(col=manufacturer), method="lm", se=F)
+</input>
+</sage>
+      <p>
+        Here is a blank Sage cell that you may use for practice and experimentation with the commands above.
+        Note that this cell allows a choice of languages,
+        and is not linked with any of the previous cells,
+        so a reader would need to start fresh,
+        or cut/paste definitions from other cells.
+      </p>
+      <sage type="practice" />
+      <p>
+        On the other hand a <tag>sage</tag> element with no content will also create an empty Sage cell for the reader's use,
+        but now it will be specific to a particular language and linked to others of the same language.
+        Run the <c>R</c> cell above that defines the variable <c>ruth</c> and then try typing <c>summary(ruth)</c> in the cell below.
+      </p>
+      <sage language="r" />
+      <p>
+        You can make Sage blocks which are of <c>type="invisible"</c>,
+        which will never be shown to a reader,
+        but which get doctested.
+        Why do this?
+        If some code produces an error,
+        and you hope it is fixed someday,
+        use an invisible block to raise the error.
+        Once fixed, the doctest will fail,
+        and you can adjust your commentary to suit.
+        There is such a block right now,
+        <em>but</em> you will need to go to the source to see it.
+      </p>
+
+<sage type="invisible">
+<input>graphs(augment='vertices').next()</input>
+<output>
+Traceback (most recent call last):
+...
+NotImplementedError
+</output>
+</sage>
+      <p>
+        Our maximum width for text, designed for readability,
+        suggests you should format your Sage code with a maximum of about 54 characters.
+        On a mobile device,
+        the number of displayed characters might be as low as 28 in portrait orientation,
+        and again around 50 in landscape.
+        You can use a variety of techniques to shorten long lines,
+        such as using intermediate variables.
+        Since Sage is just a huge Python library,
+        you can use any of Python's facilities for handling long lines.
+        These include a continuation character
+        (which I try to avoid using)
+        or natural places where you can break long lines,
+        such as between entries of a list.
+        Also, if writing loops or functions,
+        you may wish to have your indentation be only two characters wide
+        (rather than, say, four).
+      </p>
+      <p>
+        Sage output can sometimes be quite long,
+        though this has improved with some changes in Sage's output routines.
+        Output code should be included primarily for doctesting purposes,
+        and in this use,
+        you may break at almost whitespace character and the doctesting framework will adjust accordingly.
+        You may wish to show sample output in a static format,
+        like a PDF, so you can consider formatting your output to fit the width constraints of that medium.
+        Or you may even adjust exactly what is output,
+        to keep it from being too verbose.
+        Sage doctesting also allows for a wild-card style syntax which allows you to skip over huge chunks of meaningless or unpredictable output,
+        such as tracebacks on error messages.
+      </p>
+      <p>
+        This paragraph is just a placeholder.
+        It has handful of index entries,
+        all starting with the letters
+        <q>gas</q>, taken from
+        <pubtitle>Indexing for Editors and Authors: A Practical Guide to Understanding Indexes</pubtitle>
+        by Leise, Mertes, and Badgett.
+        The intent is to test letter-by-letter versus word-by-word sorting of index entries.
+        We use a word-by-word order, resulting in:
+        <ol>
+          <li>gas</li>
+          <li>gas masks</li>
+          <li>gas production</li>
+          <li>gas works</li>
+          <li>gasoline</li>
+          <li>gastritis</li>
+        </ol>
+            <idx>gasoline</idx>
+            <idx>gas works</idx>
+            <idx>gas</idx>
+            <idx>gas masks</idx>
+            <idx>gas production</idx>
+            <idx>gastritis</idx>
+      </p>
+      <paragraphs>
+        <title>Titled Sage Cells</title>
+        <idx><h>Sage cell</h><h>with a title</h></idx>
+<sage>
+<input>integral(sin(x)^2, x)</input>
+<output>1/2*x - 1/4*sin(2*x)</output>
+</sage>
+        <p>
+          You can place Sage cells inside of a <c>paragraphs</c> if you want to give them a title,
+          but no numbers, <etc />.
+        </p>
+      </paragraphs>
+
+   </subsection>
+
+
+<p>
+  Chapter 2: Exercise 21
+</p>
+
+<p>
+  <alert>Definition.</alert> Let <m>S</m> and <m>T</m> be sets. Then their <em>intersection</em> is the set of all elements that are both in <m>S</m> and <m>T</m>. We write
+  <me>
+    S\cap T := \{x|x\in S, x\in T\}.
+  </me>
+</p>
+
+<theorem>
+  <statement>
+    <p>
+      Let <m>S</m> and <m>T</m> be sets.
+      If <m>S\subseteq T</m>, then <m>S\cap T = S</m>.
+    </p>
+  </statement>
+</theorem>
+
+
+<proof>
+</proof>
    
+<sage>
+<input></input>
+
+<output></output>
+</sage>
+
 
 </section>
